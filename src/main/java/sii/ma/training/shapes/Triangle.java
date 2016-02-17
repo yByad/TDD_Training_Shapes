@@ -4,21 +4,21 @@ public class Triangle {
 
 	private int height;
 	private int base;
-	
 
 	String calculateArea(String HeightAndBase) {
-		final String[] params = HeightAndBase.split(",");
-		if(params.length == 1){
-			base = Integer.parseInt(params[0]);
-			final Integer area =  (base*base)/2;
-			return area.toString()+"\n";
+		ParametersProvider provider = new ParametersProvider(HeightAndBase);
+
+		base = provider.retrieveFirstParameter();
+		height = provider.retrieveSecondarameter();
+
+		if (triangleIsDegraded()) {
+			return new Integer((base * base) / 2).toString() + "\n";
+		} else {
+			return new Integer((height * base) / 2).toString() + "\n";
 		}
-		else{
-		height = Integer.parseInt(params[1]);
-		base = Integer.parseInt(params[0]);
-		final Integer area =  (height*base)/2;
-		
-		return area.toString()+"\n";
-		}
+	}
+
+	private Boolean triangleIsDegraded() {
+		return height == 0;
 	}
 }
