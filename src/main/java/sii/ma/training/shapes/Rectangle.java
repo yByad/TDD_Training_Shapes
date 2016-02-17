@@ -1,12 +1,9 @@
 package sii.ma.training.shapes;
 
 public class Rectangle {
-	
+
 	private int width;
 	private int length;
-	
-	
-	
 
 	Rectangle(final String widthAndLength) {
 		final String[] params = widthAndLength.split(",");
@@ -14,12 +11,9 @@ public class Rectangle {
 		length = Integer.parseInt(params[1]);
 	}
 
-
-
-
 	String calculateArea() {
-		return new Integer(width*length).toString()+"\n";
-		
+		return new Integer(width * length).toString() + "\n";
+
 	}
 
 }

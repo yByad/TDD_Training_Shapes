@@ -6,8 +6,6 @@ public class Triangle {
 
 	private int height;
 	private int base;
-	
-	
 
 	Triangle(final String HeightAndBase) {
 		final ParametersProvider provider = new ParametersProvider(HeightAndBase);
@@ -18,7 +16,7 @@ public class Triangle {
 	}
 
 	String calculateArea() {
-		
+
 		if (triangleIsDegraded()) {
 			return new Integer((base * base) / 2).toString() + "\n";
 		} else {

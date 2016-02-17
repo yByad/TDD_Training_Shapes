@@ -2,36 +2,33 @@ package sii.ma.training.Provider;
 
 public class ParametersProvider {
 
-	
 	private String parametersString;
-	
-	
-	
-	
-	public ParametersProvider(final String parametersString) {
-		
-		this.parametersString = parametersString;
+	private String[] params;
+
+	public ParametersProvider(final String parameters) {
+
+		this.parametersString = parameters;
+		params = parseParameters();
 	}
-	
-	private String[] parseParameters(){
-		
+
+	private String[] parseParameters() {
 		final String[] params = parametersString.split(",");
 		return params;
-
-		
 	}
-	public int retrieveFirstParameter(){
-		final String [] params = parseParameters();
+
+	public int retrieveFirstParameter() {
 		return new Integer(params[0]);
 	}
-	public int retrieveSecondarameter(){
 
-		final String [] params = parseParameters();
-
-		if (params.length>1)
+	public int retrieveSecondarameter() {
+		if (hasTwoParameters()) {
 			return new Integer(params[1]);
-
-		else 
+		} else {
 			return 0;
+		}
+	}
+
+	private Boolean hasTwoParameters() {
+		return (params.length > 1);
 	}
 }
