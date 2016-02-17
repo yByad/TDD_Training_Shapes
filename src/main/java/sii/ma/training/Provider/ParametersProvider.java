@@ -1,4 +1,4 @@
-package sii.ma.training.shapes;
+package sii.ma.training.Provider;
 
 public class ParametersProvider {
 
@@ -13,7 +13,7 @@ public class ParametersProvider {
 		this.parametersString = parametersString;
 	}
 	
-	public String[] parseParameters(){
+	private String[] parseParameters(){
 		
 		final String[] params = parametersString.split(",");
 		return params;

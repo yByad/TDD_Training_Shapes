@@ -13,16 +13,16 @@ public class Shapes {
 		
 	switch (ShapeType) {
 	case "SQUARE":
-		
-			out.write(new Square().calculateArea(Parameters));
+			final Square square = new Square(Parameters);
+			out.write(square.calculateArea());
 		break;
 	case "RECTANGLE":
-		
-			out.write(new Rectangle().calculateArea(Parameters));
+			final Rectangle rectangle = new Rectangle(Parameters);
+			out.write(rectangle.calculateArea());
 		break;
 		case "TRIANGLE":
-		
-			out.write(new Triangle().calculateArea(Parameters));
+			final Triangle triangle = new Triangle(Parameters);
+			out.write(triangle.calculateArea());
 		break;
 
 	default:

@@ -5,14 +5,20 @@ public class Rectangle {
 	private int width;
 	private int length;
 	
+	
+	
 
-	String calculateArea(final String HeightAndLength) {
-		final String[] params = HeightAndLength.split(",");
+	Rectangle(final String widthAndLength) {
+		final String[] params = widthAndLength.split(",");
 		width = Integer.parseInt(params[0]);
 		length = Integer.parseInt(params[1]);
-		final Integer area =  width*length;
-		
-		return area.toString()+"\n";
+	}
+
+
+
+
+	String calculateArea() {
+		return new Integer(width*length).toString()+"\n";
 		
 	}
 
