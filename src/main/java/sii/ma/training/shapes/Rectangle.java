@@ -2,15 +2,15 @@ package sii.ma.training.shapes;
 
 public class Rectangle {
 	
-	private int height;
+	private int width;
 	private int length;
 	
 
-	String calculateArea(String HeightAndLength) {
+	String calculateArea(final String HeightAndLength) {
 		final String[] params = HeightAndLength.split(",");
-		height = Integer.parseInt(params[0]);
+		width = Integer.parseInt(params[0]);
 		length = Integer.parseInt(params[1]);
-		final Integer area =  height*length;
+		final Integer area =  width*length;
 		
 		return area.toString()+"\n";
 		

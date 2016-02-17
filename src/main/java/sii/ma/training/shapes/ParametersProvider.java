@@ -8,7 +8,7 @@ public class ParametersProvider {
 	
 	
 	
-	public ParametersProvider(String parametersString) {
+	public ParametersProvider(final String parametersString) {
 		
 		this.parametersString = parametersString;
 	}

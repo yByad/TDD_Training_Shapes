@@ -5,8 +5,8 @@ public class Triangle {
 	private int height;
 	private int base;
 
-	String calculateArea(String HeightAndBase) {
-		ParametersProvider provider = new ParametersProvider(HeightAndBase);
+	String calculateArea(final String HeightAndBase) {
+		final ParametersProvider provider = new ParametersProvider(HeightAndBase);
 
 		base = provider.retrieveFirstParameter();
 		height = provider.retrieveSecondarameter();

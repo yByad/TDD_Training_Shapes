@@ -4,12 +4,12 @@ import java.io.StringWriter;
 public class Shapes {
 
 	private StringWriter out;
-	public Shapes(StringWriter out) {
+	public Shapes(final StringWriter out) {
 		this.out = out;
 		
 	}
 
-	public void area(String ShapeType, String Parameters) {
+	public void area(final String ShapeType, final String Parameters) {
 		
 	switch (ShapeType) {
 	case "SQUARE":
