@@ -69,7 +69,7 @@ public class ShapesTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void unrecognizedShape() {
+    public void wrongShape() {
 	shapes.area("Something", "20");
 	assertEquals("0\n", out.toString());
     }
