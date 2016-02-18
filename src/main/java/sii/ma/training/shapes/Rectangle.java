@@ -1,19 +1,20 @@
 package sii.ma.training.shapes;
 
-public class Rectangle {
+class Rectangle implements Polygones {
 
-	private int width;
-	private int length;
+    private int width;
+    private int length;
 
-	Rectangle(final String widthAndLength) {
-		final String[] params = widthAndLength.split(",");
-		width = Integer.parseInt(params[0]);
-		length = Integer.parseInt(params[1]);
-	}
+    Rectangle(final int[] dimensions) {
 
-	String calculateArea() {
-		return new Integer(width * length).toString() + "\n";
+	width = dimensions[0];
+	length = dimensions[1];
+    }
 
-	}
+    @Override
+    public int calculateArea() {
+	return new Integer(width * length);
+
+    }
 
 }

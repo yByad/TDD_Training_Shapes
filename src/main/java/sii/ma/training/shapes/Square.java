@@ -1,20 +1,18 @@
 package sii.ma.training.shapes;
 
-import sii.ma.training.Provider.ParametersProvider;
+class Square implements Polygones {
 
-class Square {
+    private int side;
 
-	private int side;
+    Square(final int[] side) {
+	this.side = side[0];
+    }
 
-	Square(final String sideString) {
-		final ParametersProvider provider = new ParametersProvider(sideString);
-		side = provider.retrieveFirstParameter();
-	}
+    @Override
+    public int calculateArea() {
 
-	String calculateArea() {
+	return new Integer(side * side);
 
-		return new Integer(side * side).toString() + "\n";
-
-	}
+    }
 
 }

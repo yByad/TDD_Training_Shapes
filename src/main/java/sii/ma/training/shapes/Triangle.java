@@ -1,30 +1,28 @@
 package sii.ma.training.shapes;
 
-import sii.ma.training.Provider.ParametersProvider;
+class Triangle implements Polygones {
 
-public class Triangle {
+    private int height;
+    private int base;
 
-	private int height;
-	private int base;
+    public Triangle(int... dimensions) {
 
-	Triangle(final String HeightAndBase) {
-		final ParametersProvider provider = new ParametersProvider(HeightAndBase);
+	this.base = dimensions[0];
+	this.height = dimensions[1];
+    }
 
-		base = provider.retrieveFirstParameter();
-		height = provider.retrieveSecondarameter();
+    @Override
+    public int calculateArea() {
 
+	if (triangleIsDegraded()) {
+	    return new Integer((base * base) / 2);
+	} else {
+	    return new Integer((height * base) / 2);
 	}
+    }
 
-	String calculateArea() {
+    private Boolean triangleIsDegraded() {
 
-		if (triangleIsDegraded()) {
-			return new Integer((base * base) / 2).toString() + "\n";
-		} else {
-			return new Integer((height * base) / 2).toString() + "\n";
-		}
-	}
-
-	private Boolean triangleIsDegraded() {
-		return height == 0;
-	}
+	return height == 0;
+    }
 }
