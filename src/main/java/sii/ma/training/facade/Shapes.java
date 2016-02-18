@@ -23,7 +23,8 @@ public class Shapes {
     public void area(final String ShapeType, final String dimensions) {
 	final int[] shapeDimensions = provider.retrieveDimensions(dimensions);
 	final Polygones shape = factory.createShape(ShapeType, shapeDimensions);
-	format.write(shape.calculateArea());
+	final int area = shape.calculateArea();
+	format.write(area);
     }
 
 }
