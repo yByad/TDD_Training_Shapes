@@ -2,17 +2,21 @@ package sii.ma.training.Provider;
 
 public class ParametersProvider {
 
-    private String[] params;
+    private ParametersProvider() {
 
-    public ParametersProvider(final String parameters) {
-
-	params = parseParameters(parameters);
     }
 
-    public int[] retrieveDimensions() {
+    private static ParametersProvider INSTANCE = new ParametersProvider();
+
+    public static ParametersProvider getInstance() {
+	return INSTANCE;
+    }
+
+    public int[] retrieveDimensions(final String parameters) {
 	final int[] result = { 0, 0 };
-	result[0] = retrieveFirstParameter();
-	result[1] = retrieveSecondarameter();
+	final String[] stringParameters = parseParameters(parameters);
+	result[0] = retrieveFirstParameter(stringParameters);
+	result[1] = retrieveSecondarameter(stringParameters);
 	return result;
     }
 
@@ -21,19 +25,19 @@ public class ParametersProvider {
 	return params;
     }
 
-    private int retrieveFirstParameter() {
-	return new Integer(params[0]);
+    private int retrieveFirstParameter(final String... parameters) {
+	return new Integer(parameters[0]);
     }
 
-    private int retrieveSecondarameter() {
-	if (hasTwoParameters()) {
-	    return new Integer(params[1]);
+    private int retrieveSecondarameter(final String... parameters) {
+	if (hasTwoParameters(parameters)) {
+	    return new Integer(parameters[1]);
 	} else {
 	    return 0;
 	}
     }
 
-    private Boolean hasTwoParameters() {
-	return (params.length > 1);
+    private Boolean hasTwoParameters(final String... parameters) {
+	return (parameters.length > 1);
     }
 }
