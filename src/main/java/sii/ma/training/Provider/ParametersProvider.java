@@ -13,10 +13,18 @@ public class ParametersProvider {
     }
 
     public int[] retrieveDimensions(final String parameters) {
-	final int[] result = { 0, 0 };
+
 	final String[] stringParameters = parseParameters(parameters);
-	result[0] = retrieveFirstParameter(stringParameters);
-	result[1] = retrieveSecondarameter(stringParameters);
+	final int[] result = convertFrom(stringParameters);
+	return result;
+    }
+
+    private int[] convertFrom(final String[] parameters) {
+	validateParameters(parameters);
+	final int[] result = new int[parameters.length];
+	for (int i = 0; i < parameters.length; i++) {
+	    result[i] = new Integer(parameters[i]);
+	}
 	return result;
     }
 
@@ -25,19 +33,9 @@ public class ParametersProvider {
 	return params;
     }
 
-    private int retrieveFirstParameter(final String... parameters) {
-	return new Integer(parameters[0]);
+    private void validateParameters(final String[] parameters) {
+	if (parameters.length != 1 && parameters.length != 2)
+	    throw new IllegalArgumentException();
     }
 
-    private int retrieveSecondarameter(final String... parameters) {
-	if (hasTwoParameters(parameters)) {
-	    return new Integer(parameters[1]);
-	} else {
-	    return 0;
-	}
-    }
-
-    private Boolean hasTwoParameters(final String... parameters) {
-	return (parameters.length > 1);
-    }
 }

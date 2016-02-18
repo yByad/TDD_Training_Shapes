@@ -1,10 +1,10 @@
-package sii.ma.training.shapes;
+package sii.ma.training.area;
 
 class FakePolygone implements Polygones {
 
     @Override
     public int calculateArea() {
-	return 0;
+	throw new IllegalArgumentException();
     }
 
 }

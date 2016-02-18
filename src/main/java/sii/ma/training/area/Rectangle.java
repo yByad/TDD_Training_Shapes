@@ -1,4 +1,4 @@
-package sii.ma.training.shapes;
+package sii.ma.training.area;
 
 class Rectangle implements Polygones {
 
@@ -13,7 +13,7 @@ class Rectangle implements Polygones {
 
     @Override
     public int calculateArea() {
-	return new Integer(width * length);
+	return width * length;
 
     }
 

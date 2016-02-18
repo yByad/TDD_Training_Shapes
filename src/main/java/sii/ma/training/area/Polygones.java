@@ -1,4 +1,4 @@
-package sii.ma.training.shapes;
+package sii.ma.training.area;
 
 public interface Polygones {
 	int calculateArea();

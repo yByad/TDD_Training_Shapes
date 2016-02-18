@@ -1,4 +1,4 @@
-package sii.ma.training.shapes;
+package sii.ma.training.area;
 
 class Square implements Polygones {
 
@@ -11,7 +11,7 @@ class Square implements Polygones {
     @Override
     public int calculateArea() {
 
-	return new Integer(side * side);
+	return side * side;
 
     }
 
