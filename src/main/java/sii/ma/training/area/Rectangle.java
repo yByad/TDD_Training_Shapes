@@ -1,14 +1,16 @@
 package sii.ma.training.area;
 
+import java.util.List;
+
 class Rectangle implements Polygones {
 
     private int width;
     private int length;
 
-    Rectangle(final int[] dimensions) {
+    Rectangle(final List<Integer> shapeDimensions) {
 
-	width = dimensions[0];
-	length = dimensions[1];
+	width = shapeDimensions.get(0);
+	length = shapeDimensions.get(1);
     }
 
     @Override

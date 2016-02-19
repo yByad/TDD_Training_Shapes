@@ -1,5 +1,7 @@
 package sii.ma.training.area;
 
+import java.util.List;
+
 class Triangle implements Polygones {
 
     private int height;
@@ -11,9 +13,9 @@ class Triangle implements Polygones {
 	this.height = base;
     }
 
-    public Triangle(int... dimensions) {
-	this.height = dimensions[1];
-	this.base = dimensions[0];
+    public Triangle(List<Integer> dimensions) {
+	this.height = dimensions.get(0);
+	this.base = dimensions.get(1);
     }
 
     @Override

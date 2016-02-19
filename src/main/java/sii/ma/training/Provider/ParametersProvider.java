@@ -1,5 +1,8 @@
 package sii.ma.training.Provider;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParametersProvider {
 
     private ParametersProvider() {
@@ -12,18 +15,18 @@ public class ParametersProvider {
 	return INSTANCE;
     }
 
-    public int[] retrieveDimensions(final String parameters) {
+    public List<Integer> retrieveDimensions(final String parameters) {
 
 	final String[] stringParameters = parseParameters(parameters);
-	final int[] result = convertFrom(stringParameters);
+	final List<Integer> result = convertFrom(stringParameters);
 	return result;
     }
 
-    private int[] convertFrom(final String[] parameters) {
+    private List<Integer> convertFrom(final String[] parameters) {
 	validateParameters(parameters);
-	final int[] result = new int[parameters.length];
+	final List<Integer> result = new ArrayList<Integer>();
 	for (int i = 0; i < parameters.length; i++) {
-	    result[i] = new Integer(parameters[i]);
+	    result.add(new Integer(parameters[i]));
 	}
 	return result;
     }

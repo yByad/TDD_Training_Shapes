@@ -1,5 +1,7 @@
 package sii.ma.training.area;
 
+import java.util.List;
+
 public class ShapesFactory {
     private ShapesFactory() {
     }
@@ -10,20 +12,19 @@ public class ShapesFactory {
 	return INSTANCE;
     }
 
-    public Polygones createShape(final String ShapeType, final int[] dimensions) {
+    public Polygones createShape(final String ShapeType, final List<Integer> shapeDimensions) {
 	switch (ShapeType) {
 	case "SQUARE":
-	    return new Square(dimensions);
+	    return new Square(shapeDimensions);
 
 	case "RECTANGLE":
-	    return new Rectangle(dimensions);
+	    return new Rectangle(shapeDimensions);
 
 	case "TRIANGLE":
-	    if (dimensions.length > 1)
-		return new Triangle(dimensions);
+	    if (shapeDimensions.size() > 1)
+		return new Triangle(shapeDimensions);
 	    else
-		return new Triangle(dimensions[0]);
-
+		return new Triangle(shapeDimensions.get(0));
 	default:
 	    return new FakePolygone();
 

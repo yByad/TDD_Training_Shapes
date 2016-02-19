@@ -1,11 +1,13 @@
 package sii.ma.training.area;
 
+import java.util.List;
+
 class Square implements Polygones {
 
     private int side;
 
-    Square(final int[] side) {
-	this.side = side[0];
+    Square(final List<Integer> shapeDimensions) {
+	this.side = shapeDimensions.get(0);
     }
 
     @Override
